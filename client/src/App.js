@@ -1,4 +1,6 @@
 import './App.css';
+import BookingsBox from './containers/BookingsBox';
+import CoursesBox from './containers/CoursesBox';
 import CustomersBox from './containers/CustomersBox';
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
     // </div>
     <>
         <CustomersBox />
+        <CoursesBox />
+        <BookingsBox />
     </>
   );
 }

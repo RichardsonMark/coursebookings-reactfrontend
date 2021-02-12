@@ -3,10 +3,11 @@ const Customer = ({customer}) => {
         return null
       }
     return (
-        <div className="customer-info">
+        <div>
         <p>Name: {customer.name}</p>
-        <p>{customer.town} </p>
-        <p>Population {customer.age}</p>
+        <p>Age {customer.age}</p>
+        <p>Location: {customer.town}</p>
+        <p>Bookings: {customer.bookings}</p>
         </div>
     )
 }

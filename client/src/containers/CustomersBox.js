@@ -7,6 +7,8 @@ const CustomersBox = () => {
 
 
     const [customerlist, setCustomerList] = useState([]);
+    const [selectedCustomerid, setSelectedCustomerid] = useState('')
+
 
 
     const getCustomerList = () => {
@@ -29,14 +31,22 @@ const CustomersBox = () => {
 
     if (!customerlist) return null;
 
+    const handleCustomerSelected = id => {
+        setSelectedCustomerid(id)
+      }
+
+    const selectedCustomer = customerlist.find(customer => customer.id === selectedCustomerid)
 
     return (
         <>
-            <h1>Hello, World!</h1>
-            <CustomerList customerlist={customerlist}  />
-            <Customer Customer={customerlist}  />            
+            <h1>Course, Bookings and Customers</h1>
+            <div>
+            <p>Customers</p>
+            <CustomerList customerlist={customerlist} onCustomerSelected={handleCustomerSelected} />
+            <p>Customer details</p>
+            <Customer customer={selectedCustomer}  />  
+            </div>          
         </>
     )
 }
-
 export default CustomersBox;

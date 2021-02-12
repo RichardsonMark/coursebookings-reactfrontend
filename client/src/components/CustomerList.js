@@ -6,10 +6,9 @@ const CustomerList = ({customerlist, onCustomerSelected}) => {
         onCustomerSelected(event.target.value)
       }
 
-
     return (
         <select defaultValue="" onChange={handleChange}>
-          <option value="" disabled>Choose a customer</option>
+          <option value="" >Choose a customer</option>
           {customerlist.map(customerlist => {
             return (
               <option key={customerlist.id} value={customerlist.id}>{customerlist.name}</option>
@@ -18,5 +17,4 @@ const CustomerList = ({customerlist, onCustomerSelected}) => {
         </select>
     )
 }
-
 export default CustomerList;
