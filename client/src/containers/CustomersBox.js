@@ -7,8 +7,8 @@ const CustomersBox = () => {
 
 
     const [customerlist, setCustomerList] = useState([]);
-    const [selectedCustomerid, setSelectedCustomerid] = useState('')
-
+    const [selectedCustomerid, setSelectedCustomerid] = useState("")
+    const [loaded, setLoaded] = useState(false);
 
 
     const getCustomerList = () => {
@@ -20,22 +20,25 @@ const CustomersBox = () => {
             .then((data) => {
                 setCustomerList(data);
                 console.log(data)
-
             })
+            .then(() => setLoaded(true));
     };
 
     useEffect(() => {
         getCustomerList();
-    }, []);
+    }, [selectedCustomerid]);
 
 
     if (!customerlist) return null;
+    console.log(customerlist)
 
     const handleCustomerSelected = id => {
         setSelectedCustomerid(id)
       }
+      console.log(selectedCustomerid)
 
     const selectedCustomer = customerlist.find(customer => customer.id === selectedCustomerid)
+    console.log(selectedCustomer)
 
     return (
         <>
