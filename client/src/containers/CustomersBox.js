@@ -35,7 +35,6 @@ const CustomersBox = () => {
     const handleCustomerSelected = id => {
         setSelectedCustomerid(id)
       }
-      console.log(selectedCustomerid)
 
     const selectedCustomer = customerlist.find(customer => customer.id === selectedCustomerid)
     console.log(selectedCustomer)
@@ -47,7 +46,7 @@ const CustomersBox = () => {
             <p>Customers</p>
             <CustomerList customerlist={customerlist} onCustomerSelected={handleCustomerSelected} />
             <p>Customer details</p>
-            <Customer customer={selectedCustomer}  />  
+            <Customer customer={customerlist}  />  
             </div>          
         </>
     )

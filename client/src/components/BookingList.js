@@ -11,7 +11,7 @@ const BookingList = ({bookinglist, onBookingSelected}) => {
           <option value="" >Choose a booking</option>
           {bookinglist.map(bookinglist => {
             return (
-              <option key={bookinglist.id} value={bookinglist.id}>{bookinglist.name}</option>
+              <option key={bookinglist.id} value={bookinglist.id}>{bookinglist.date}</option>
             )
           })}
         </select>
